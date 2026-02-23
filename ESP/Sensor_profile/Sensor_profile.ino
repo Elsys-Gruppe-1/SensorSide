@@ -135,13 +135,12 @@
 
 
 #include <OneWire.h>
-#include <WiFi.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 #include <Wire.h> // Lagt til for I2C
 
 // ESP32 parameters
-#define esp_nr 2
+#define esp_nr 1
 #define Depth esp_nr
 
 // I2C Innstillinger
@@ -151,7 +150,7 @@
 
 #define SCOUNT 30
 #define TDS_SENSOR_PIN 32
-#define TEMP_Pin 2 // Temperature sensor pin (DS18S20)
+#define TEMP_Pin 4 // Temperature sensor pin (DS18S20)
 #define VREF 5.0   // ADC reference voltage
 
 OneWire ds(TEMP_Pin);
@@ -219,11 +218,12 @@ void loop() {
 void prepareData() {
     StaticJsonDocument<256> doc;
     doc["ts"] = millis() / 1000;
-    doc["id"] = 1;
-    doc["depth"] = Depth;   
+    doc["esp_id"] = esp_nr;
+    doc["pi_id"] = esp_nr;
+    doc["d"] = Depth;   
 
     JsonObject sensorValues = doc.createNestedObject("Values");
-    sensorValues["Temp"] = temperature;
+    sensorValues["Tmp"] = temperature;
     sensorValues["TDS"] = tdsValue;
 
     serializeJson(doc, lastJsonOutput);

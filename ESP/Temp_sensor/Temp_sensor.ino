@@ -1,11 +1,11 @@
 #include <OneWire.h>
 
-int DS18S20_Pin = 3; // Pin connected to the DS18S20 sensor signal
+int DS18S20_Pin = 4; // Pin connected to the DS18S20 sensor signal
 OneWire ds(DS18S20_Pin); // OneWire bus setup on pin 2
 
 void setup(void) {
   Serial.begin(115200); // Initialize serial communication at 9600 bps
-  pinMode(3, INPUT_PULLUP);
+  pinMode(DS18S20_Pin, INPUT_PULLUP);
 }
 
 void loop(void) {
