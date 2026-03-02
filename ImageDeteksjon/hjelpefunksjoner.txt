@@ -1,0 +1,18 @@
+1. https://repo.anaconda.com/archive/ # last ned conda fra her.
+
+1. https://www.anaconda.com/download/success # eller her! ser minder shady ut
+
+2. conda env create -f environment.yml  # kjør for å lage env fra fil her.
+
+3. yaml.py for å lage .yaml fil 
+
+4. kan hende pytorch må til for gpu utilisering. 
+
+export env::
+
+
+conda env export > environment.txt
+
+yolosplitter 
+https://pypi.org/project/yolosplitter/
+
