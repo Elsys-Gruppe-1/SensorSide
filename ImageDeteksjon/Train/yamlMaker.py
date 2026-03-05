@@ -7,6 +7,7 @@ def create_yolo_yaml(dataset_root, class_names, output_file="data.yaml"):
     data = {
         "train": "train/images",
         "val": "val/images",
+        "test": "test/images",
         "nc": len(class_names),
         "names": class_names
     }
@@ -18,6 +19,6 @@ def create_yolo_yaml(dataset_root, class_names, output_file="data.yaml"):
 
     print(f"Created YOLO YAML → {output_path}")
 
-dataset = "yolo_dataset"   # folder containing train/ and val/
-classes = ["person", "car", "dog"]
+dataset = "/Users/martinsteinsvollrikardsen/Documents/Elsys_prosjekt/drevja_data/new_dataset/dataset_splitted"   # folder containing train/ and val/
+classes = ["fish"]
 create_yolo_yaml(dataset, classes) 
