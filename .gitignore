@@ -217,3 +217,7 @@ runs/detect/
 # alle .pt filer
 *.pt
 *.pt
+
+# modeller folder: 
+/modeller/
+
