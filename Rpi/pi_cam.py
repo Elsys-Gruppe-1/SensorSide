@@ -6,7 +6,7 @@ import cv2
 
 # To access devices: v4l2-ctl --list-devices
 
-camera_ids = [0, 4, 2, 17]
+camera_ids = [0, 2, 6]
 cameras = {}
 
 # 1. Open all cameras and store them in a dictionary
