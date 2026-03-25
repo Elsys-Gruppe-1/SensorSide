@@ -5,7 +5,7 @@
 
 // ESP32 parameters
 #define esp_nr 3
-#define Depth esp_nr
+#define Depth esp_nr*0.25
 
 // I2C Innstillinger
 #define I2C_DEV_ADDR 0x07 + esp_nr// ESP32 sin adresse på I2C-bussen
@@ -84,8 +84,8 @@ void prepareData() {
     doc["pi_id"] = 1;
     doc["depth"] = Depth;   
 
-    JsonObject sensorValues = doc.createNestedObject("Values");
-    sensorValues["Tmp"] = temperature;
+    JsonObject sensorValues = doc.createNestedObject("sensor_value");
+    sensorValues["Temperatur"] = temperature;
     sensorValues["TDS"] = tdsValue;
 
     serializeJson(doc, lastJsonOutput);
