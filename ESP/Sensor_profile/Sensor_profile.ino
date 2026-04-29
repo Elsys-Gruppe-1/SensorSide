@@ -4,8 +4,8 @@
 #include <Wire.h> // Lagt til for I2C
 
 // ESP32 parameters
-#define esp_nr 3
-#define Depth esp_nr*0.25
+#define esp_nr 1
+#define Depth esp_nr*0.5
 
 // I2C Innstillinger
 #define I2C_DEV_ADDR 0x07 + esp_nr// ESP32 sin adresse på I2C-bussen
@@ -82,7 +82,7 @@ void loop() {
 void prepareData() {
     StaticJsonDocument<256> doc;
     doc["pi_id"] = 1;
-    doc["depth"] = Depth;   
+    doc["depth"] = (double)Depth;   
 
     JsonObject sensorValues = doc.createNestedObject("sensor_value");
     sensorValues["Temperatur"] = temperature;
