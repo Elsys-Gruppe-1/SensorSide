@@ -1,3 +1,5 @@
+// Denne koden kombinerer TDS_sensor og Temp_sensor, samt initialiserer I2C som slave-enhet
+// Koden vil også etter lesing av sensordata pakke det inn i en JSON streng
 #include <OneWire.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>

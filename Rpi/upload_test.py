@@ -1,7 +1,5 @@
 import requests
 import time
-import datetime
-import json
 
 # ESP32 sin I2C-adresse (må matche koden på ESP32)
 SLAVE_ADDR_1 = 0x08

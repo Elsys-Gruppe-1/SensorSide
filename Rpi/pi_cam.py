@@ -1,10 +1,6 @@
 import cv2
 
-
-
-# Define the IDs for your 4 cameras
-
-# To access devices: v4l2-ctl --list-devices
+# Hjelpefunksjon for å se kameraer: v4l2-ctl --list-devices
 
 camera_ids = [0, 2, 6]
 cameras = {}
